@@ -42,18 +42,26 @@ const socialCount = SOCIALS.filter(social => social.active).length;
       </a>
 
       <p>
-        Ahmed Gatnash is co-founder and Executive Director of Kawaakibi Foundation, 
-        a MENA-centered human rights organisation.
+        I'm co-founder and Executive Director of 
+        <LinkButton
+          className="underline decoration-dashed underline-offset-4 hover:text-skin-accent"
+          href="https://kawaakibi.org">
+          Kawaakibi Foundation
+        </LinkButton>, 
+        a MENA-centered human rights organisation. We work on creative 
+        initiatives that make a meaningful long-term difference to the 
+        global struggle for human rights and dignity.
       </p>
-      <!- <p>
-        Read the blog posts or check
+      <p>
+        My book,
         <LinkButton
           className="underline decoration-dashed underline-offset-4 hover:text-skin-accent"
           href="https://github.com/satnaing/astro-paper#readme"
         >
-          README
-        </LinkButton> for more info.
-      </p>-!>
+          The Middle East Crisis Factory
+        </LinkButton>, is about our region's past, the vicious cycle 
+          of terrorism, tyranny and foreign intervention, and how we can build a better future.
+      </p>
       {
         // only display if at least one social link is enabled
         socialCount > 0 && (
@@ -66,7 +74,7 @@ const socialCount = SOCIALS.filter(social => social.active).length;
     </section>
 
     <Hr />
-
+<!-
     {
       featuredPosts.length > 0 && (
         <>
@@ -85,7 +93,7 @@ const socialCount = SOCIALS.filter(social => social.active).length;
           {recentPosts.length > 0 && <Hr />}
         </>
       )
-    }
+    } -!>
 
     {
       recentPosts.length > 0 && (
