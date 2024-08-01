@@ -3,34 +3,28 @@ layout: ../layouts/AboutLayout.astro
 title: "About"
 ---
 
-AstroPaper is a minimal, responsive and SEO-friendly Astro blog theme. I designed and crafted this based on [my personal blog](https://satnaing.dev/blog).
+I'm co-founder and Executive Director of Kawaakibi Foundation, a MENA-centered human rights organisation. We work on creative initiatives that make a meaningful long-term difference to the global struggle for human rights and dignity.
 
-This theme is aimed to be accessible out of the box. Light and dark mode are supported by
-default and additional color schemes can also be configured.
+I'm also developing programmes at the Albert Einstein Institution, where we're empowering humanity by scaling global education on how to conduct effective nonviolent action, based on cutting-edge research.
 
-This theme is self-documented \_ which means articles/posts in this theme can also be considered as documentations. So, see the documentation for more info.
+My book, The Middle East Crisis Factory, is about our region's past, the vicious cycle of terrorism, tyranny and foreign intervention, and how we can build a better future.
+
+Before all of that, I was doing (mechanical) engineering and product design/development, in both startups and FTSE500 companies.
 
 <div>
   <img src="/assets/dev.svg" class="sm:w-1/2 mx-auto" alt="coding dev illustration">
 </div>
 
-## Tech Stack
+## Consulting
 
-This theme is written in vanilla JavaScript (+ TypeScript for type checking) and a little bit of ReactJS for some interactions. TailwindCSS is used for styling; and Markdown is used for blog contents.
+I've spent over a decade dealing with problems in the context of starting and building organisations. I occasionally consult for other organisations on topics I've spent a lot of time on. Engagements typically fall into the following categories:
 
-## Features
+- Political Consulting
+I focus on foreign policy, the behaviour of authoritarian states, disinformation, human rights in the MENA region, and digital security practices for individuals and small teams.
 
-Here are certain features of this site.
+- Organisational Consulting
+⁠My expertise is in helping young or growing organisations develop, with all that it entails from the simple problems of institutionalising efficient processes to the hard problems of organisational culture, and big-picture strategy development. I've done this with both startups and nonprofits.
 
-- fully responsive and accessible
-- SEO-friendly
-- light & dark mode
-- fuzzy search
-- super fast performance
-- draft posts
-- pagination
-- sitemap & rss feed
-- highly customizable
+Areas of particular interest are transition to remote or asynchronous work, development or improvement of organisational workflows and processes, and knowledge management for expert teams with high-levels of information flow.
 
-If you like this theme, you can star/contribute to the [repo](https://github.com/satnaing/astro-paper).  
-Or you can even give any feedback via my [email](mailto:contact@satnaing.dev).
+If you think my experience fits the problems you're facing well, then I'll probably enjoy helping you solve your problems. Get in touch on ahmed [at] gatnash.com.
