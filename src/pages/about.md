@@ -19,11 +19,11 @@ Before all of this, I was doing (mechanical) engineering and product design/deve
 
 I've spent over a decade dealing with problems in the context of starting and building organisations. I occasionally consult for other organisations on topics I've spent a lot of time on. Engagements typically fall into the following categories:
 
-- **Political Consulting**
+- **Political Consulting.**
 I focus on foreign policy, the behaviour of authoritarian states, disinformation, human rights in the MENA region, and digital security practices for individuals and small teams.
 
-- **Organisational Consulting**
+- **Organisational Consulting.**
 ⁠My expertise is in helping young or growing organisations develop, with all that it entails from the simple problems of institutionalising efficient processes to the hard problems of organisational culture, and big-picture strategy development. I've done this with both startups and nonprofits.
 Areas of particular interest are transition to remote or asynchronous work, development or improvement of organisational workflows and processes, and knowledge management for expert teams with high-levels of information flow.
 
-If you think my experience fits the problems you're facing well, then I'll probably enjoy helping you solve your problems. Get in touch on ahmed [at] gatnash.com.
+If you think my experience fits the problems you're facing well, then I'll probably enjoy helping you solve your problems. Get in touch on **ahmed [at] gatnash.com**.
