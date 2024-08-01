@@ -45,12 +45,6 @@ export const SOCIALS: SocialObjects = [
     active: false,
   },
   {
-    name: "LinkedIn",
-    href: "https://www.linkedin.com/in/gatnash/",
-    linkTitle: `${SITE.title} on LinkedIn`,
-    active: true,
-  },
-  {
     name: "Mail",
     href: "mailto:ahmed@gatnash.com",
     linkTitle: `Send an email to ${SITE.title}`,
@@ -60,6 +54,12 @@ export const SOCIALS: SocialObjects = [
     name: "Twitter",
     href: "https://twitter.com/gatnash",
     linkTitle: `${SITE.title} on Twitter`,
+    active: true,
+  },
+  {
+    name: "LinkedIn",
+    href: "https://www.linkedin.com/in/gatnash/",
+    linkTitle: `${SITE.title} on LinkedIn`,
     active: true,
   },
   {
