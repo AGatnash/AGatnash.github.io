@@ -1,7 +1,7 @@
 ---
 author: Ahmed Gatnash
 pubDatetime: 2022-01-24T15:20:35Z
-title: Diverging Trends: A Geopolitically Active West
+title: Diverging Trends- A Geopolitically Active West
 slug: diverging-trends-a-geopolitically-active-west
 featured: false
 draft: false
