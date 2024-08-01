@@ -9,7 +9,7 @@ draft: false
 tags:
   - psychedelics
   - spirituality
-description: 
+description: Are they a silver bullet?
 ---
 
 Most of human history is driven by trauma and ego. These and a shortage of empathy, inability to see others’ perspectives and projection of pain onto others are key ingredients in dysfunctional organisations, coercive cultures and broken families. Most of the current world, including those parts of it which cause most anger and frustration – unaccountable political systems, power dynamics, the cruelty and mercilessness of unfettered capitalism – would be significantly ameliorated by a radical increase in empathy.
