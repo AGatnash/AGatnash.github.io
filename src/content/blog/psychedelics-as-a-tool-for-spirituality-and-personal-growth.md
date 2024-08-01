@@ -1,7 +1,7 @@
 ---
 author: Ahmed Gatnash
 pubDatetime: 2022-12-06T04:58:53Z
-modDatetime: 2023-01-15T13:05:56.066Z
+modDatetime: 2022-12-08T13:05:56.066Z
 title: Psychedelics as a tool for spirituality and personal growth
 slug: psychedelics-as-a-tool-for-spirituality-and-personal-growth
 featured: false
