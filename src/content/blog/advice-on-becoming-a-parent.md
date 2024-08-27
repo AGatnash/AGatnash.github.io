@@ -30,7 +30,7 @@ Be sure to support your partner extra-well during this phase - they're still rec
 
 Take care of the night feeds (use a bottle) so that they can get some uninterrupted sleep time.
 
-Look after your back - bending over to lift and put down will be an extremely repetitive motion for a couple of years, and having bad form can really do some long-term damage. I recommend a changing table like __this one__ for changing the baby at a comfortable level (and storing all the stuff that accumulates).
+Look after your back - bending over to lift and put down will be an extremely repetitive motion for a couple of years, and having bad form can really do some long-term damage. I recommend a changing table like [this one](https://www.amazon.co.uk/BABYLO-Changer-Clever-Convenient-Storage/dp/B08MW663X1/ref=sr_1_3?dib=eyJ2IjoiMSJ9.Wg-DgxjeMoDq3U6kfR2_lIyplAjkamj8FDWMLGFJJW1FLeIe_U2H-4D8kXXypP--nw5_efHe95Wx7XqfcEAs5ohiqhv4_2HrqFpYzjxVFXONKIGHCeoze8x1RNUsWF3Iz9OxamoBY8SBEWI8nieYeXBxyfZcLz77IzlSGrnHXmf_K1VCqIflN6LbKjLn4mmswkRlBVSKEVzIelZyOHmCUPMTf3S6JJpBS0TPMUPUZ-YsTB9NdkSuqZ3QfM7x3a0qtBAKkxxvfles0E_VYk5uJFISW60VcQb_AAt-OROUmi4.rR6s1UmDpFg0SGQlwzQImF4Arz1kQlZj7hNUDbSD0pw&dib_tag=se&keywords=baby+changing+trolley&qid=1724791135&sr=8-3) for changing the baby at a comfortable level (and storing all the stuff that accumulates).
 
 ## Routine
 Find your new normal - it will be very different, and you will be a different person living a different life. Don't try to live the life you did before; you can't, you'll only dash yourself against your new responsibilities.
