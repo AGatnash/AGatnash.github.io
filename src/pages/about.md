@@ -9,7 +9,7 @@ I'm also a strategic advisor at the [Albert Einstein Institution](https://aeinst
 
 My book, [The Middle East Crisis Factory](https://menacrisisfactory.com/), is a primer on our region's past and how the vicious cycle of terrorism, tyranny and foreign intervention was born, as well as how we can build a better future.
 
-Before all of this, I was a mechanical engineer, doing product design/development in both startups and FTSE500 companies.
+Before all of this I was a mechanical engineer, doing product design/development in both startups and FTSE500 companies.
 
 <div>
   <img src="/assets/dev.svg" class="sm:w-1/2 mx-auto" alt="coding dev illustration">
