@@ -34,21 +34,23 @@ const socialImageURL = new URL(
   Astro.url.origin
 ).href;
 
-const structuredData = {
-  "@context": "https://schema.org",
-  "@type": "BlogPosting",
-  headline: `${title}`,
-  image: `${socialImageURL}`,
-  datePublished: `${pubDatetime?.toISOString()}`,
-  ...(modDatetime && { dateModified: modDatetime.toISOString() }),
-  author: [
-    {
-      "@type": "Person",
-      name: `${author}`,
-      url: `${profile}`,
-    },
-  ],
-};
+const structuredData = pubDatetime
+  ? {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      headline: `${title}`,
+      image: `${socialImageURL}`,
+      datePublished: pubDatetime.toISOString(),
+      ...(modDatetime && { dateModified: modDatetime.toISOString() }),
+      author: [
+        {
+          "@type": "Person",
+          name: `${author}`,
+          url: `${profile}`,
+        },
+      ],
+    }
+  : null;
 ---
 
 <!doctype html>
@@ -102,10 +104,14 @@ const structuredData = {
     <meta property="twitter:image" content={socialImageURL} />
 
     <!-- Google JSON-LD Structured data -->
-    <script
-      type="application/ld+json"
-      set:html={JSON.stringify(structuredData)}
-    />
+    {
+      structuredData && (
+        <script
+          type="application/ld+json"
+          set:html={JSON.stringify(structuredData)}
+        />
+      )
+    }
 
     <!-- Google Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />

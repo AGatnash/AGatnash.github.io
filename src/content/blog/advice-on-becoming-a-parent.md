@@ -2,7 +2,7 @@
 title: Advice on becoming a parent
 author: Ahmed Gatnash
 pubDatetime: 2024-08-02T14:35:06.130Z
-slug: Advice-on-becoming-a-parent
+slug: advice-on-becoming-a-parent
 featured: false
 draft: false
 tags:

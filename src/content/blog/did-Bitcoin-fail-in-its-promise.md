@@ -2,7 +2,7 @@
 title: Did Bitcoin fail in its promise? Where next?
 author: Ahmed Gatnash
 pubDatetime: 2021-02-05T10:11:06.130Z
-slug: did-Bitcoin-fail-in-its-promise
+slug: did-bitcoin-fail-in-its-promise
 featured: false
 draft: false
 tags:
