@@ -5,7 +5,7 @@ hideBreadcrumbs: true
 titleDir: "rtl"
 ---
 
-<div dir="rtl" class="text-lg leading-9">
+<div dir="rtl" class="arabic-content text-xl leading-10">
 
 أنا المؤسس المشارك والمدير التنفيذي لـ[مؤسسة الكواكبي](https://kawaakibi.org/)، وهي منظمة حقوقية تعمل على مبادرات إبداعية يمكنها أن تحدث أثراً بعيد المدى في النضال العالمي من أجل حقوق الإنسان والكرامة. كما بنيت [Silkworm](https://usesilkworm.com/)، وهي أداة قانونية تستخدم الذكاء الاصطناعي للمحامين الجنائيين في بريطانيا.
 
