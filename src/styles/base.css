@@ -81,10 +81,13 @@
     @apply mb-2;
   }
   .prose details {
-    @apply inline-block cursor-pointer select-none text-skin-base;
+    @apply my-4 block rounded border border-skin-line px-4 py-3 text-skin-base;
   }
   .prose summary {
-    @apply focus-outline;
+    @apply focus-outline cursor-pointer select-none text-skin-base;
+  }
+  .prose details[open] summary {
+    @apply mb-3;
   }
   .prose h2#table-of-contents + p {
     @apply hidden;
