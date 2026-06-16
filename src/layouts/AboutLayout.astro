@@ -9,6 +9,8 @@ export interface Props {
   frontmatter: {
     title: string;
     description?: string;
+    hideBreadcrumbs?: boolean;
+    titleDir?: "ltr" | "rtl";
   };
 }
 
@@ -17,10 +19,18 @@ const { frontmatter } = Astro.props;
 
 <Layout title={`${frontmatter.title} | ${SITE.title}`}>
   <Header activeNav="about" />
-  <Breadcrumbs />
+  {!frontmatter.hideBreadcrumbs && <Breadcrumbs />}
   <main id="main-content">
     <section id="about" class="prose mb-28 max-w-3xl prose-img:border-0">
-      <h1 class="text-2xl tracking-wider sm:text-3xl">{frontmatter.title}</h1>
+      <h1
+        class:list={[
+          "text-2xl tracking-wider sm:text-3xl",
+          frontmatter.titleDir === "rtl" && "text-right",
+        ]}
+        dir={frontmatter.titleDir}
+      >
+        {frontmatter.title}
+      </h1>
       <slot />
     </section>
   </main>
