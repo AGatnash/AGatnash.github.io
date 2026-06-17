@@ -113,7 +113,9 @@ const showSearchInNav = false;
       </nav>
     </div>
   </div>
-  <Hr />
+  <div class="hidden sm:block">
+    <Hr />
+  </div>
 </header>
 
 <style>
@@ -127,7 +129,10 @@ const showSearchInNav = false;
     @apply relative flex w-full items-start justify-between p-4 sm:items-center sm:py-8;
   }
   .logo {
-    @apply absolute py-1 text-xl font-semibold sm:static sm:text-2xl;
+    @apply py-1 text-xl font-semibold sm:text-2xl;
+  }
+  .logo img {
+    @apply h-auto max-w-[calc(100vw-6rem)];
   }
   .hamburger-menu {
     @apply self-end p-2 sm:hidden;
