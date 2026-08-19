@@ -11,7 +11,7 @@ export async function getStaticPaths() {
   return getPageNumbers(posts.length)
     .filter(page => page > 1)
     .map(page => ({
-      params: { page },
+      params: { page: String(page) },
     }));
 }
 
