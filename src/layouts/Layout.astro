@@ -1,5 +1,5 @@
 ---
-import { LOCALE, SITE } from "@config";
+import { LOCALE, SITE, SOCIALS } from "@config";
 import "@styles/base.css";
 import { ClientRouter } from "astro:transitions";
 
@@ -34,6 +34,18 @@ const socialImageURL = new URL(
   Astro.url.origin
 ).href;
 
+const personStructuredData = {
+  "@type": "Person",
+  "@id": `${SITE.profile}#person`,
+  name: SITE.author,
+  url: SITE.profile,
+  description: SITE.desc,
+  jobTitle: "Institution builder, strategic operator and founder",
+  sameAs: SOCIALS.filter(
+    social => social.active && social.href.startsWith("http")
+  ).map(social => social.href),
+};
+
 const structuredData = pubDatetime
   ? {
       "@context": "https://schema.org",
@@ -44,13 +56,16 @@ const structuredData = pubDatetime
       ...(modDatetime && { dateModified: modDatetime.toISOString() }),
       author: [
         {
-          "@type": "Person",
+          ...personStructuredData,
           name: `${author}`,
           url: `${profile}`,
         },
       ],
     }
-  : null;
+  : {
+      "@context": "https://schema.org",
+      ...personStructuredData,
+    };
 ---
 
 <!doctype html>

@@ -1,27 +1,55 @@
 ---
-// Remove current url path and remove trailing slash if exists
+type BreadcrumbItem = {
+  label: string;
+  href?: string;
+};
+
+// Remove the current URL path and any trailing slash.
 const currentUrlPath = Astro.url.pathname.replace(/\/+$/, "");
+const pathSegments = currentUrlPath.split("/").slice(1);
 
-// Get url array from path
-// eg: /tags/tailwindcss => ['tags', 'tailwindcss']
-const breadcrumbList = currentUrlPath.split("/").slice(1);
+const decodeSegment = (segment: string) => {
+  try {
+    return decodeURIComponent(segment);
+  } catch {
+    return segment;
+  }
+};
 
-// if breadcrumb is Home > Posts > 1 <etc>
-// replace Posts with Posts (page number)
-breadcrumbList[0] === "posts" &&
-  breadcrumbList.splice(0, 2, `Posts (page ${breadcrumbList[1] || 1})`);
+const breadcrumbList: BreadcrumbItem[] = (() => {
+  const [section, second, third] = pathSegments;
 
-// if breadcrumb is Home > Tags > [tag] > [page] <etc>
-// replace [tag] > [page] with [tag] (page number)
-breadcrumbList[0] === "tags" &&
-  !isNaN(Number(breadcrumbList[2])) &&
-  breadcrumbList.splice(
-    1,
-    3,
-    `${breadcrumbList[1]} ${
-      Number(breadcrumbList[2]) === 1 ? "" : "(page " + breadcrumbList[2] + ")"
-    }`
-  );
+  if (section === "posts") {
+    if (second === "page" && third) {
+      return [{ label: `Posts (page ${decodeSegment(third)})` }];
+    }
+
+    return second
+      ? [{ label: "Posts", href: "/posts/" }, { label: decodeSegment(second) }]
+      : [{ label: "Posts" }];
+  }
+
+  if (section === "tags") {
+    if (second && third && !Number.isNaN(Number(third))) {
+      const pageLabel = Number(third) === 1 ? "" : ` (page ${third})`;
+      return [
+        { label: "Tags", href: "/tags/" },
+        { label: `${decodeSegment(second)}${pageLabel}` },
+      ];
+    }
+
+    return second
+      ? [{ label: "Tags", href: "/tags/" }, { label: decodeSegment(second) }]
+      : [{ label: "Tags" }];
+  }
+
+  return pathSegments.map((segment, index) => ({
+    label: decodeSegment(segment),
+    ...(index < pathSegments.length - 1 && {
+      href: `/${pathSegments.slice(0, index + 1).join("/")}/`,
+    }),
+  }));
+})();
 ---
 
 <nav class="breadcrumb" aria-label="breadcrumb">
@@ -31,21 +59,20 @@ breadcrumbList[0] === "tags" &&
       <span aria-hidden="true">&raquo;</span>
     </li>
     {
-      breadcrumbList.map((breadcrumb, index) =>
-        index + 1 === breadcrumbList.length ? (
+      breadcrumbList.map(({ label, href }, index) =>
+        href ? (
+          <li>
+            <a href={href}>{label}</a>
+            <span aria-hidden="true">&raquo;</span>
+          </li>
+        ) : (
           <li>
             <span
               class={`${index > 0 ? "lowercase" : "capitalize"}`}
               aria-current="page"
             >
-              {/* make the last part lowercase in Home > Tags > some-tag */}
-              {decodeURIComponent(breadcrumb)}
+              {label}
             </span>
-          </li>
-        ) : (
-          <li>
-            <a href={`/${breadcrumb}/`}>{breadcrumb}</a>
-            <span aria-hidden="true">&raquo;</span>
           </li>
         )
       )

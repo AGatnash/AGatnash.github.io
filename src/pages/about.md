@@ -31,7 +31,7 @@ I also led Shefa, our pioneering program to develop a culturally grounded and hi
 
 I'm a strategic advisor at the [Albert Einstein Institution](https://aeinstein.org/), where we study and educate on what makes strategic nonviolent action more effective and form part of a recursive link between research and frontline movements.
 
-I joined the organisation after the passing of its founder, the legendary nonviolent action theorist Dr Gene Sharp, when its continued existence was in question. Alongside the Executive Director I worked on developing the organisation's future strategy, recruiting senior staff, fundraising, and planning and implementing new projects, including the People-Powered Training Platform and a new program on inorporating Unarmed Civilian-Based Defense into defense policy.
+I joined the organisation after the passing of its founder, the legendary nonviolent action theorist Dr Gene Sharp, when its continued existence was in question. Alongside the Executive Director I worked on developing the organisation's future strategy, recruiting senior staff, fundraising, and planning and implementing new projects, including the People-Powered Training Platform and a new program on incorporating Unarmed Civilian-Based Defense into defense policy.
 
 </details>
 
@@ -51,17 +51,4 @@ First engineering hire at an optical metrology startup developing advanced non-c
 
 </details>
 
-## Consulting
-
-I've spent over a decade dealing with the practical problems of starting and building organisations, including:
-
-- **Political Consulting.**
-Authoritarian states, disinformation, human rights in the MENA region, and how these intersect with foreign policy and digital security for individuals and small teams.
-
-- **Organisational Consulting.**
-Helping young or growing organisations develop, from institutionalising efficient processes to strategy, culture, remote or asynchronous work, workflows, and knowledge management for expert teams with high levels of information flow.
-
-- **Overcoming Financial Barriers**
-Helping organisations use cryptocurrency to overcome financial barriers, particularly where undeveloped banking sectors, foreign funding laws, or other restrictions make it difficult for important organisations to operate.
-
-If you think my experience fits the problems you're facing well, then I'll probably enjoy helping you solve your problems. Get in touch on **ahmed [at] gatnash.com**.
+I also offer [consulting for organisations facing complex political, organisational and financial challenges](/consulting/).

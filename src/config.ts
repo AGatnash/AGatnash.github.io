@@ -4,7 +4,7 @@ export const SITE: Site = {
   website: "https://gatnash.com/",
   author: "Ahmed Gatnash",
   profile: "https://gatnash.com/",
-  desc: "Ahmed's blog",
+  desc: "Ahmed Gatnash is an institution builder, strategic operator and founder working across organisational leadership, applied AI, political power and societal resilience.",
   title: "Ahmed Gatnash",
   ogImage: "astropaper-og.jpg",
   lightAndDarkMode: true,
