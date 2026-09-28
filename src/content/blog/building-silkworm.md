@@ -1,5 +1,5 @@
 ---
-title: "Building Silkworm: what I learned taking an AI legal tool from idea to production"
+title: "Building Silkworm: an AI tool for my wife"
 author: Ahmed Gatnash
 pubDatetime: 2026-09-28T14:29:00+01:00
 featured: false
