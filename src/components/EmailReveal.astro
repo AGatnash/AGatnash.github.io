@@ -1,0 +1,55 @@
+---
+import socialIcons from "@assets/socialIcons";
+
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<details class="email-reveal">
+  <summary class="focus-outline" title={title} aria-label={title}>
+    <Fragment set:html={socialIcons.Mail} />
+    <span class="sr-only">{title}</span>
+  </summary>
+  <div class="email-address">
+    <a class="focus-outline underline underline-offset-4" data-email-address
+    ></a>
+    <noscript>Enable JavaScript to reveal the email address.</noscript>
+  </div>
+</details>
+
+<script>
+  document
+    .querySelectorAll<HTMLDetailsElement>(".email-reveal")
+    .forEach(details => {
+      details.addEventListener("toggle", () => {
+        if (!details.open) return;
+        const link = details.querySelector<HTMLAnchorElement>(
+          "[data-email-address]"
+        );
+        if (!link || link.hasAttribute("href")) return;
+
+        // Deter basic HTML harvesters; this is obfuscation, not a security boundary.
+        const address = ["ahmed", ["gatnash", "com"].join(".")].join("@");
+        link.textContent = address;
+        link.href = `mailto:${address}`;
+      });
+    });
+</script>
+
+<style>
+  .email-reveal {
+    @apply inline-block;
+  }
+  summary {
+    @apply cursor-pointer list-none p-2 hover:text-skin-accent sm:p-1;
+  }
+  summary::-webkit-details-marker {
+    display: none;
+  }
+  .email-address {
+    @apply absolute left-0 top-full z-10 whitespace-nowrap rounded border border-skin-line bg-skin-fill px-3 py-2 text-skin-base shadow-md;
+  }
+</style>
