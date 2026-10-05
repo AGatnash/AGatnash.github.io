@@ -10,30 +10,25 @@
 </head>
 <body>
 <main>
-  <header><span class="eyebrow">PIXEL G1s · BLUETOOTH CONTROLLER</span><h1>Your light.<br>Your controls.</h1><p>No account. No discontinued app. Just Bluetooth.</p></header>
+  <h1>Pixel G1s</h1>
   <section class="connection" aria-label="Connection">
     <p id="status" role="status" aria-live="polite">Not connected</p>
     <button id="connect">Connect light</button><button id="disconnect" hidden class="secondary">Disconnect</button>
-    <p class="hint">Keep the light on and disconnect it from other phones first.</p>
   </section>
   <form id="controls">
     <fieldset disabled id="fieldset">
       <legend class="sr-only">Light controls</legend>
       <section><div class="label-row"><label for="brightness">Brightness</label><output id="brightness-value" for="brightness">50%</output></div>
-      <input id="brightness" type="range" min="0" max="100" value="50"><div class="range-labels"><span>0%</span><span>100%</span></div>
-      <button type="button" id="apply-brightness">Apply brightness</button><p class="hint">Verified on the G1s. Nothing is sent until you tap Apply.</p></section>
-      <details><summary>Colour controls <span class="tag">Experimental</span></summary>
-        <p class="hint">Recovered from the original app, not yet verified on this light. These also apply the brightness above.</p>
+      <input id="brightness" type="range" min="0" max="100" value="50">
+      <button type="button" id="apply-brightness">Apply brightness</button></section>
         <section><div class="label-row"><label for="kelvin">White temperature</label><output id="kelvin-value" for="kelvin">5600 K</output></div>
-        <input id="kelvin" type="range" min="2500" max="8500" step="100" value="5600"><div class="range-labels"><span>Warm · 2500 K</span><span>Cool · 8500 K</span></div><button type="button" id="apply-cct">Apply white</button></section>
+        <input id="kelvin" type="range" min="2500" max="8500" step="100" value="5600"><button type="button" id="apply-cct">Apply white</button></section>
         <section><div class="label-row"><label for="hue">Colour hue</label><output id="hue-value" for="hue">180°</output></div>
         <input id="hue" class="hue" type="range" min="0" max="360" value="180">
         <div class="label-row"><label for="saturation">Saturation</label><output id="saturation-value" for="saturation">100%</output></div>
         <input id="saturation" type="range" min="0" max="100" value="100"><button type="button" id="apply-hsi">Apply colour</button></section>
-      </details>
     </fieldset>
   </form>
-  <p id="message" role="status" aria-live="polite">The controls show requested settings, not readings from the light.</p>
-  <footer><p id="offline">Preparing offline access…</p><p>Use Chrome on Android. You can add this page to your home screen. The phone talks directly to your nearby light; no commands leave your device.</p></footer>
+  <p id="message" role="status" aria-live="polite"></p>
 </main><script type="module" src="app.js"></script>
 </body></html>

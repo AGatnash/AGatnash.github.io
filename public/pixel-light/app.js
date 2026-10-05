@@ -10,7 +10,7 @@ function render() {
 function disconnected() {
   characteristic = undefined;
   $('status').textContent = 'Not connected';
-  $('message').textContent = 'Light disconnected. Reconnect to send another command. Nothing is replayed automatically.';
+  $('message').textContent = '';
   render();
 }
 function explain(error) {
@@ -30,7 +30,7 @@ $('connect').addEventListener('click', async () => {
     characteristic = await service.getCharacteristic(CONTROL);
     if (!characteristic.properties.writeWithoutResponse) throw new Error('This device does not support the required write mode.');
     $('status').textContent = `Connected · ${device.name || 'Pixel light'}`;
-    $('message').textContent = 'Ready. Connecting does not change any light settings.';
+    $('message').textContent = '';
   } catch (error) {
     characteristic = undefined; device?.gatt?.disconnect();
     $('status').textContent = 'Not connected'; $('message').textContent = explain(error);
@@ -46,7 +46,7 @@ async function apply(label, build) {
   try {
     await sendPackets(characteristic, build(), connected);
     if (!connected()) throw new Error('Light disconnected before the command completed.');
-    $('message').textContent = `${label} sent. Check the light to confirm; it does not report its settings back.`;
+    $('message').textContent = '';
   } catch (error) {
     device?.gatt?.disconnect(); disconnected(); $('message').textContent = explain(error);
   } finally { busy = false; render(); }
@@ -62,8 +62,5 @@ if (!window.isSecureContext || !navigator.bluetooth) {
   $('message').textContent = 'Open this page over HTTPS in Chrome on Android or a Bluetooth-enabled computer. iPhone browsers are not supported.';
 }
 if ('serviceWorker' in navigator && window.isSecureContext) {
-  navigator.serviceWorker.register('./sw.js').then(async () => {
-    await navigator.serviceWorker.ready;
-    $('offline').textContent = 'Saved for offline use on this device.';
-  }).catch(() => { $('offline').textContent = 'Offline saving failed. Keep an internet connection when opening this page.'; });
-} else { $('offline').textContent = 'Offline access is unavailable in this browser.'; }
+  navigator.serviceWorker.register('./sw.js').catch(() => {});
+}

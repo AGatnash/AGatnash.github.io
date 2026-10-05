@@ -1,4 +1,4 @@
-const CACHE = 'pixel-light-v1';
+const CACHE = 'pixel-light-v2';
 const FILES = ['./','./index.html','./style.css','./app.js','./protocol.js','./manifest.webmanifest','./icon.svg'];
 self.addEventListener('install', event => event.waitUntil(caches.open(CACHE).then(cache => cache.addAll(FILES))));
 self.addEventListener('activate', event => event.waitUntil(caches.keys().then(keys => Promise.all(keys.filter(key => key.startsWith('pixel-light-') && key !== CACHE).map(key => caches.delete(key)))).then(() => self.clients.claim())));
