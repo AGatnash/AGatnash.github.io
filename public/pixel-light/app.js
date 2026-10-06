@@ -1,4 +1,5 @@
 import {SERVICE, CONTROL, brightness, cct, hsi, sendPackets} from './protocol.js';
+import {permittedLight, openLight} from './connection.js';
 const $ = id => document.getElementById(id);
 let device, characteristic, busy = false, connecting = false;
 const connected = () => !!device?.gatt?.connected && !!characteristic;
@@ -18,19 +19,21 @@ function explain(error) {
   if (error.name === 'SecurityError') return 'Bluetooth permission was blocked. Open this HTTPS page in Chrome and allow access to your light.';
   return `${error.message || 'Bluetooth command failed.'} Keep the light nearby, disconnect other devices, then reconnect.`;
 }
-$('connect').addEventListener('click', async () => {
-  connecting = true; render(); $('status').textContent = 'Choose your Pixel-G1s…';
-  try {
-    const selected = await navigator.bluetooth.requestDevice({filters: [{namePrefix: 'Pixel'}, {namePrefix: 'PIXEL'}], optionalServices: [SERVICE]});
+async function connectSelected(selected) {
     if (device) device.removeEventListener('gattserverdisconnected', disconnected);
     device = selected; device.addEventListener('gattserverdisconnected', disconnected);
     $('status').textContent = 'Connecting…';
-    const server = await device.gatt.connect();
-    const service = await server.getPrimaryService(SERVICE);
-    characteristic = await service.getCharacteristic(CONTROL);
-    if (!characteristic.properties.writeWithoutResponse) throw new Error('This device does not support the required write mode.');
+    characteristic = await openLight(device, SERVICE, CONTROL);
+    try { localStorage.setItem('pixel-light-device', device.id); } catch {}
     $('status').textContent = `Connected · ${device.name || 'Pixel light'}`;
     $('message').textContent = '';
+}
+$('connect').addEventListener('click', async () => {
+  if (connecting || busy) return;
+  connecting = true; render(); $('status').textContent = 'Choose your Pixel-G1s…';
+  try {
+    const selected = await navigator.bluetooth.requestDevice({filters: [{namePrefix: 'Pixel'}, {namePrefix: 'PIXEL'}], optionalServices: [SERVICE]});
+    await connectSelected(selected);
   } catch (error) {
     characteristic = undefined; device?.gatt?.disconnect();
     $('status').textContent = 'Not connected'; $('message').textContent = explain(error);
@@ -60,6 +63,21 @@ if (!window.isSecureContext || !navigator.bluetooth) {
   $('connect').disabled = true;
   $('status').textContent = 'Bluetooth unavailable';
   $('message').textContent = 'Open this page over HTTPS in Chrome on Android or a Bluetooth-enabled computer. iPhone browsers are not supported.';
+} else {
+  // Never open the permission picker or send settings on page load.
+  connecting = true; render();
+  (async () => {
+    try {
+      let rememberedId;
+      try { rememberedId = localStorage.getItem('pixel-light-device'); } catch {}
+      const selected = await permittedLight(navigator.bluetooth, rememberedId);
+      if (selected) await connectSelected(selected);
+    } catch {
+      characteristic = undefined; device?.gatt?.disconnect();
+      $('status').textContent = 'Not connected';
+      $('message').textContent = '';
+    } finally { connecting = false; render(); }
+  })();
 }
 if ('serviceWorker' in navigator && window.isSecureContext) {
   navigator.serviceWorker.register('./sw.js').catch(() => {});

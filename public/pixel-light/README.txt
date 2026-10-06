@@ -8,7 +8,12 @@ Deployment: existing site npm ci / npm run build workflow copies this public
 directory unchanged to dist/pixel-light/. No separate deployment is required.
 Verification: open https://gatnash.com/pixel-light/ in Android Chrome, tap
 Connect light, select Pixel-G1s, then Apply brightness. Disconnect other
-phones first. Connecting does not change settings; values are requests,
+phones first. On load, reconnect to the last light if the browser exposes
+previously granted devices. First use, unsupported browsers, revoked permission,
+multiple lights without a saved choice, or an unavailable light fall back to
+Connect light. No automatic permission picker, retry loop, or setting writes.
+The default requested brightness is 5%; Apply is still required to change it.
+Connection attempts time out after 15 seconds. Connecting does not change settings; values are requests,
 not readings. White temperature and HSI colour remain experimental.
 
 50% brightness packets matched the physically verified Windows test. The
